@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>La Hispano Mexicana</title>
         <link rel="stylesheet" href="./styles.css" />
-        <link rel="stylesheet" href="https://use.typekit.net/tcp1hzn.css" />
     </head>
     <body>
         <header>
@@ -21,12 +20,17 @@
             />
             <nav class="nav-bar">
                 <ul class="list">
-                    <li class="item"><a href="">INICIO</a></li>
-                    <li class="item"><a href="">SERVICIOS</a></li>
-                    <li class="item"><a href="">ASISTENCIA EMOCIONAL</a></li>
-                    <li class="item"><a href="">CONTACTO</a></li>
+                    <li class="item"><a href="/">INICIO</a></li>
+                    <li class="item"><a href="#servicios">SERVICIOS</a></li>
+                    <li class="item"><a href="#asistencia-emocional">ASISTENCIA EMOCIONAL</a></li>
+                    <li class="item"><a href="#contacto">CONTACTO</a></li>
                 </ul>
             </nav>
+            <article class="call-buttons">
+                <p class="paragraph">ASISTENCIA LAS 24HRS</p>
+                <a class="anchor" href="">Llamar</a>
+                <a class="anchor" href="">WhatsApp</a>
+            </article>
         </header>
         <body>
             <div class="separation"></div>
@@ -45,7 +49,7 @@
                 </p>
             </section>
             <div class="separation"></div>
-            <section class="services">
+            <section id="servicios" class="services">
                 <h2 class="title">Servicios</h2>
                 <ul class="list">
                     <li class="item">Asesoría telefónica las 24 hrs.</li>
@@ -115,11 +119,11 @@
                     </button>
                 </div>
             </section>
-            <section class="emotional-assistance">
+            <section id="asistencia-emocional" class="emotional-assistance">
                 <figure class="banner"></figure>
                 <img
                     class="flyer"
-                    src="./assets/Tanatología.svg"
+                    src="./assets/thanatology.svg"
                     alt="Tanatología"
                 />
                 <h2 class="title">Asistencia Emocional</h2>
@@ -131,19 +135,48 @@
                 </ul>
             </section>
             <div class="separation"></div>
-            <section class="contact">
+            <section id="contacto" class="contact">
                 <h2 class="title">Contáctanos</h2>
                 <p class="paragraph">
                     Envíanos tus datos y nos pondremos en contacto contigo.
                 </p>
                 <form class="form" action="">
-                    <label class="label" for="name">Nombre y apellido*</label>
-                    <input class="input" type="text" name="name" id="name" />
-                    <label class="label" for="mail">Correo Electrónico*</label>
-                    <input class="input" type="email" name="mail" id="mail" />
-                    <label class="label" for="phone">Número de Teléfono*</label>
-                    <input class="input" type="tel" name="phone" id="phone" />
-                    <button class="button">ENVIAR</button>
+                    <div class="input-container">
+                        <label class="label" for="name"
+                            >Nombre y apellido*</label
+                        >
+                        <input
+                            class="input"
+                            type="text"
+                            name="name"
+                            id="name"
+                        />
+                    </div>
+                    <div class="input-container">
+                        <label class="label" for="mail"
+                            >Correo Electrónico*</label
+                        >
+                        <input
+                            class="input"
+                            type="email"
+                            name="mail"
+                            id="mail"
+                        />
+                    </div>
+                    <div class="input-container">
+                        <label class="label" for="phone"
+                            >Número de Teléfono*</label
+                        >
+                        <input
+                            class="input"
+                            type="tel"
+                            name="phone"
+                            id="phone"
+                        />
+                    </div>
+                    <div class="button-container">
+                        <button class="button">ENVIAR</button>
+                    </div>
                 </form>
                 <article class="card">
                     <p class="paragraph">
@@ -168,7 +201,30 @@
             </section>
             <div class="separation"></div>
         </body>
-        <footer></footer>
+        <footer>
+            <img src="./assets/logo-white.svg" alt="Logo" class="logo" />
+            <article class="privacy">
+                <p class="paragraph">Hispano Mexicana</p>
+                <a href="" class="anchor">Aviso de Privacidad</a>
+                <a href="" class="anchor">Términos y Condiciones</a>
+            </article>
+            <article class="social-media">
+                <p class="paragraph">Redes Sociales</p>
+                <img
+                    src="./assets/fb-icon.svg"
+                    alt="Facebook icon"
+                    class="icon facebook"
+                />
+                <img
+                    src="./assets/wp-icon.svg"
+                    alt="WhatsApp icon"
+                    class="icon whatsapp"
+                />
+            </article>
+            <p class="rights">
+                2024. Grupo Hispano Mexicana. Todos los derechos reservados.
+            </p>
+        </footer>
 
         <script src="./script.js"></script>
     </body>
