@@ -13,19 +13,20 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 
     .ornament {
-        width: 100%;
-        margin: 0 0 1em 0;
+        width: 165%;
+        margin: 0 0 10px 0;
     }
     .logo {
-        margin: 0 0 1em 0;
-        width: 13em;
+        margin: 0 0 10px 0;
+        width: 130px;
     }
     .nav-bar {
-        margin: 0 0 1em 0;
+        margin: 0 0 10px 0;
         width: 95%;
-        height: 3em;
+        height: 30px;
         border: 1px solid #727271;
         border-radius: 5px;
 
@@ -76,18 +77,68 @@ header {
             color: #FFF;
         }
     }
+    @media(min-width: 550px) {
+        .ornament {
+            margin: 0 0 15px 0;
+            width: 150%;
+        }
+        .logo {
+            margin: 0 0 15px 0;
+            width: 160px;
+        }
+        .nav-bar {
+            margin: 0 0 15px 0;
+            width: 90%;
+            height: 40px;
+            .list {
+                .item {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+        .call-buttons {
+            top: 50px;
+            right: 20px;
+            .paragraph {
+                margin-bottom: 8px;
+                width: 130px;
+                height: 25px;
+                border-radius: 10px;
+                font-size: 1rem;
+            }
+            .anchor {
+                margin-right: 5px;
+                padding: 4px;
+                border-radius: 8px;
+                font-size: 1.2rem;
+            }
+        }
+    }
+    @media(min-width: 768px) {
+        .ornament {
+            width: 135%;
+        }
+        .logo {
+            width: 180px;
+        }
+    }
+    @media(min-width: 1024px) {
+        .ornament {
+            width: 100%;
+        }
+    }
 }
 
 .separation {
     width: 100%;
-    height: 1em;
+    height: 10px;
     background-color: #bbbaba;
 }
-.banner {
-    height: 18em;
-    background-color: #1d1d1b;
-}
 .history {
+    .banner {
+        height: 180px;
+        background-color: #1d1d1b;
+    }
     .title {
         margin: 20px 0 20px 20px;
         font-size: 1.8rem;
@@ -98,6 +149,19 @@ header {
         font-size: 1.4rem;
         font-weight: bold;
         color: #1a3c34;
+    }
+    @media(min-width: 550px) {
+        .banner {
+            height: 260px;
+        }
+        .title {
+            margin: 30px 0 30px 30px;
+            font-size: 2.2rem;
+        }
+        .paragraph {
+            font-size: 1.6rem;
+            margin: 0 30px 30px 30px;
+        }
     }
 }
 .services {
@@ -120,7 +184,7 @@ header {
         position: relative;
         display: flex;
         justify-content: center;
-        margin-bottom: 1.8rem;
+        margin-bottom: 20px;
         width: 100%;
 
         .button {
@@ -129,6 +193,7 @@ header {
             height: 40px;
             background-color: transparent;
             border: none;
+            cursor: pointer;
         }
         .left {
             top: calc(50% - 20px);
@@ -149,6 +214,22 @@ header {
             overflow: hidden;
         }
     }
+    @media(min-width: 550px) {
+        .title {
+            margin: 30px 0 30px 30px;
+            font-size: 2.2rem;
+        }
+        .list {
+            margin: 0 0 30px 50px;
+    
+            .item {
+                font-size: 1.6rem;
+            }
+        }
+        .gallery-container {
+            margin-bottom: 30px;
+        }
+    }
 }
 .emotional-assistance {
     display: flex;
@@ -156,7 +237,7 @@ header {
     align-items: center;
     width: 100%;
     .banner {
-        margin: 0 0 2em 0;
+        margin: 0 0 20px 0;
         width: 100%;
         height: 120px;
         background-image: url(./assets/tanatology-banner.jpg);
@@ -180,6 +261,24 @@ header {
         margin: 0 0 20px 40px;
         font-size: 1.8rem;
     }
+    @media (min-width: 550px) {
+        .banner {
+            margin: 0 0 30px 0;
+            height: 220px;
+        }
+        .flyer {
+            margin: 0 0 30px 0;
+            width: 280px;
+        }
+        .title {
+            margin: 0 0 30px 0;
+            font-size: 2.2rem;
+        }
+        .list {
+            margin: 0 0 30px 50px;
+            font-size: 2.2rem;
+        }
+    }
 }
 .contact {
     display: flex;
@@ -189,6 +288,7 @@ header {
     .title {
         align-self: flex-start;
         margin: 20px 0 20px 20px;
+        font-size: 1.8rem;
     }
     .paragraph {
         align-self: flex-start;
@@ -232,14 +332,14 @@ header {
                 background-color: #415D56;
                 color: #FFF;
                 font-size: 1.2rem;
-                font-weight: bold;
-                font-family: century-gothic, sans-serif;
+                font-family: 'Poppins', sans-serif;
+                cursor: pointer;
             }
         }
     }
     .card {
         width: 240px;
-        margin-bottom: 20px;
+        margin: 0 0 20px 0;
         border: 2px solid #878787;
         border-radius: 10px;
 
@@ -247,6 +347,54 @@ header {
             margin: 10px;
             font-size: 1.3rem;
             color: #1A3C34;
+        }
+    }
+    @media (min-width: 550px) {
+
+        .title {
+            margin: 30px 0 30px 30px;
+            width: 100%;
+            font-size: 2.2rem;
+        }
+        .paragraph {
+            margin: 0 0 30px 30px;
+            width: 100%;
+            font-size: 1.8rem;
+        }
+        .form {
+            width: 90%;
+
+            .input-container {
+                margin-bottom: 30px;
+
+                .label {
+                    font-size: 1.6rem;
+                }
+                .input {
+                    height: 30px;
+                }
+            }
+            .button-container {
+                margin-bottom: 30px;
+
+                .button {
+                    width: 85px;
+                    height: 30px;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+        .card {
+            margin: 0 0 30px 0;
+        }
+    }
+    @media (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .card {
+            margin: 0 15px 30px 15px;
         }
     }
 }

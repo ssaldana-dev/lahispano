@@ -1,49 +1,64 @@
-const gallery = document.querySelector(".gallery");
-const galleryImages = gallery.querySelectorAll(".image");
+// Seleccionar el contenedor de la galería y las imágenes dentro de él
+const galleryContainer = document.querySelector(".gallery");
+const galleryImages = galleryContainer.querySelectorAll(".image");
 
-let imageSize = (gallery.clientWidth / 100) * 30;
-let imageSeparation = ((gallery.clientWidth / 100) * 10) / 6;
-let moveDistance = imageSeparation * 2 + imageSize;
+// Inicializar variables para el tamaño de la imagen, separación entre imágenes y distancia de movimiento
+let imageSize, imageSeparation, moveDistance;
 
-function updateImageSize() {
-    imageSize = (gallery.clientWidth / 100) * 30;
-    imageSeparation = ((gallery.clientWidth / 100) * 10) / 6;
+// Función para actualizar el tamaño de la imagen y la separación entre imágenes
+function updateImageProperties() {
+    imageSize = (galleryContainer.clientWidth / 100) * 30;
+    imageSeparation = ((galleryContainer.clientWidth / 100) * 10) / 6;
     moveDistance = imageSeparation * 2 + imageSize;
 }
 
+// Función para ajustar el tamaño y la posición de la galería
 function adjustGallery() {
-    updateImageSize();
-    gallery.style.height = `${imageSize}px`;
+    updateImageProperties();
+    galleryContainer.style.height = `${imageSize}px`;
 
-    for (image of galleryImages) {
+    // Iterar sobre todas las imágenes y aplicar estilos
+    for (const image of galleryImages) {
         image.style.margin = `0px ${imageSeparation}px 0px ${imageSeparation}px`;
         image.style.width = `${imageSize}px`;
         image.style.height = `${imageSize}px`;
     }
 }
 
-const leftButton = document.querySelector(".left");
-const rightButton = document.querySelector(".right");
+// Seleccionar los botones de navegación izquierda y derecha
+const leftNavigationButton = document.querySelector(".left");
+const rightNavigationButton = document.querySelector(".right");
 
-leftButton.addEventListener("click", moveLeft);
-rightButton.addEventListener("click", moveRight);
+// Agregar eventos de clic a los botones de navegación
+leftNavigationButton.addEventListener("click", moveLeft);
+rightNavigationButton.addEventListener("click", moveRight);
 
+// Inicializar variables para el número total de imágenes y la posición actual
 let totalImages = galleryImages.length;
-let position = 0;
+let currentPosition = 0;
 
+// Función para desplazar la galería hacia la derecha
 function moveRight() {
-    if (position < totalImages - 3) {
-        updateImageSize();
-        gallery.scrollTo(moveDistance * (position + 1), 0);
-        position++;
-    }
-}
-function moveLeft() {
-    if (position > 0) {
-        updateImageSize();
-        gallery.scrollTo(moveDistance * (position - 1), 0);
-        position--;
+    if (currentPosition < totalImages - 3) {
+        updateImageProperties();
+        galleryContainer.scrollTo(moveDistance * (currentPosition + 1), 0);
+        currentPosition++;
     }
 }
 
-adjustGallery();
+// Función para desplazar la galería hacia la izquierda
+function moveLeft() {
+    if (currentPosition > 0) {
+        updateImageProperties();
+        galleryContainer.scrollTo(moveDistance * (currentPosition - 1), 0);
+        currentPosition--;
+    }
+}
+
+// Función para ajustar la galería al cargar la página
+function adjustGalleryOnLoad() {
+    adjustGallery();
+}
+
+// Añadir un evento que llame a la función cuando se cargue la página
+window.addEventListener("load", adjustGalleryOnLoad);
