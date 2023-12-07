@@ -6,7 +6,7 @@
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
-    font-family: century-gothic, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 header {
@@ -298,17 +298,5 @@ footer {
         right: 10px;
         font-size: 0.5rem;
         color: #FFF;
-    }
-}
-
-@media (min-width: 700px) {
-    header {
-        display: none;
-    }
-    body {
-        display: none;
-    }
-    footer {
-        display: none;
     }
 }
