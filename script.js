@@ -1,8 +1,6 @@
-// Seleccionar el contenedor de la galería y las imágenes dentro de él.
 const galleryContainer = document.querySelector(".gallery");
 const galleryImages = galleryContainer.querySelectorAll(".image");
 
-// Inicializar variables para el tamaño de la imagen, separación entre imágenes y distancia de movimiento.
 let imageSize, imageSeparation, moveDistance;
 
 // Función para actualizar el tamaño de la imagen y su separación relacionadas con el tamaño de la galería.
@@ -24,7 +22,6 @@ function adjustGallery() {
     galleryContainer.style.height = `${imageSize}px`;
     galleryContainer.scrollTo(moveDistance * currentPosition, 0);
 
-    // Iterar sobre todas las imágenes y aplicar estilos.
     for (const image of galleryImages) {
         image.style.margin = `0px ${imageSeparation}px 0px ${imageSeparation}px`;
         image.style.width = `${imageSize}px`;
@@ -32,15 +29,12 @@ function adjustGallery() {
     }
 }
 
-// Seleccionar los botones de navegación izquierda y derecha.
 const leftNavigationButton = document.querySelector(".left");
 const rightNavigationButton = document.querySelector(".right");
 
-// Agregar eventos de clic a los botones de navegación.
 leftNavigationButton.addEventListener("click", moveLeft);
 rightNavigationButton.addEventListener("click", moveRight);
 
-// Inicializar variables para el número total de imágenes y la posición actual.
 let totalImages = galleryImages.length;
 let currentPosition = 0;
 
@@ -75,7 +69,6 @@ function adjustGalleryOnResize() {
     adjustGallery();
 }
 
-// Añadir un evento que llame a la función cuando cambie el tamaño de la ventana.
 window.addEventListener("resize", adjustGalleryOnResize);
 
 // Función para ajustar la galería al cargar la página.
@@ -83,5 +76,4 @@ function adjustGalleryOnLoad() {
     adjustGallery();
 }
 
-// Añadir un evento que llame a la función cuando se cargue la página.
 window.addEventListener("load", adjustGalleryOnLoad);
